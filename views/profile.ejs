@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <h3 class="nav-txt">dribble</h3>
+    </nav>
+    <div class="profile-container">
+        <h1  class="profile-heading">Welcome! Let's create your profile</h1>
+        <p class="profile-subheading">Let others get to know you better! You can do these later</p>
+        <form method="POST" action="/profile">
+            <div class="img-section">
+                <div class="grid-container">
+                    <div class="img-container">
+                        <h3 class="img-txt">Add an avatar</h3>
+                        <img src="images/singin-img.jpg" alt="Sign-in Avatar">
+                    </div>
+                    <div class="action-container">
+                        <button class="choose-img-btn">Choose image</button>
+                        <ul class="random-choice">
+                            <li>Or choose one of our defaults</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="location-txt">Add your location</h3>
+            <input class="ip-location" type="text" placeholder="Enter a location">
+            <button class="next-btn">Next</button>
+            <button class="return-btn">or Press RETURN</button>
+        </form>
+    </div>
+</body>
+</html>

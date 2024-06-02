@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dribbble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+            <div class="art-layout">
+                <div class="text-overlay">
+                    <h3 class="art-lay-heading">dribbble</h3>
+                    <h1 class="quote">Discover the world's top Designer & Creative</h1>
+                </div>
+                <img src="images/singin-img.jpg">
+            </div>
+        
+        <div class="card-layout">
+            <p class="signin-opt">Already a member ? <a>Sign in</a></p>
+            <div class="card-container">
+                <div class="card">
+                    <form id="form" method="POST" action="/create">
+                        <h1 class="heading">Sign up to Dribbble</h1>
+
+                        <% if (locals.error) { %>
+                            <p class="sub-heading user-avail" id="subHeading">username has been taken</p>
+                        <% } %>
+                        
+                        <div class="name-user">
+                            <div class="">
+                                <label for="name">Name</label><br>
+                                <input class="name" id="name" type="text" name="name">
+                            </div>
+
+                            <% if (locals.error) { %>
+                                <div>
+                                    <div class="username">
+                                        <label for="usernameFailed" style="color:red;">Username</label><br>
+                                        <input class="userfailed" id="username" type="text" name="username">
+                                    </div>
+                                </div>
+                                </div>
+                                
+
+                            <% } else { %>
+                                <div class="username">
+                                    <label for="username">Username</label><br>
+                                    <input class="user" id="username" type="text" name="username">
+                                </div>
+                            </div> 
+                            <%}%>
+
+                        <div class="email">
+                            <label for="email">Email</label><br>
+                            <input class="em-pass" id="email" type="email" name="email">
+                        </div>
+
+                        <div class="password">
+                        <label for="password">Password</label><br>
+                        <input class="em-pass" id="password" type="password" placeholder=" 6+ characters" name="password"> 
+                        </div>
+
+                        <div class="checkbox">
+                            <input class="chk" type="checkbox">
+                            <label class="p">Creating an account means you're okay with our <a>Terms of Services, Privacy Policy</a>, and our default <a>Notification Settings</a></label>
+                        </div>
+
+                        <button class="create-acc-btn" id="createAccount">Create Account</button>
+                        <p>This site is protected by reCAPTCHA and Google <a href="https://policies.google.com/terms?hl=en-US">Privacy Policy</a> and <a href="https://policies.google.com/terms?hl=en-US">Terms of services</a> apply</p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+const form = document.getElementById('form');
+const createAccountButton = document.getElementById('createAccount');
+
+// Disabling the button initially
+createAccountButton.disabled = true;
+
+// Function to check input fields
+function checkFields() {
+  const name = document.getElementById('name').value.trim();
+  const username = document.getElementById('username').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  // Enable the button if all fields are filled
+  createAccountButton.disabled = !(name && username && email && password);
+}
+
+// Adding event listeners to input fields
+document.getElementById('name').addEventListener('input', checkFields);
+document.getElementById('username').addEventListener('input', checkFields);
+document.getElementById('email').addEventListener('input', checkFields);
+document.getElementById('password').addEventListener('input', checkFields);
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // To prevent form submission for testing, remove if needed
+
+  // You could submit the form here if needed, or do additional validation
+  if (!createAccountButton.disabled) {
+    form.addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+
+  const password = document.getElementById('password').value.trim();
+  
+  if (password.length >= 6) {
+    // If the password is 6 or more characters, submit the form
+    form.submit();
+  } else {
+    // If the password is less than 6 characters, show an alert
+    alert("The password should be of 6+ characters");
+  }
+});
+
+  }
+});
+
+</script>
+
+
+</html>

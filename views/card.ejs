@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <span class="nav-txt">dribbble</span>
+        <a href="profile.ejs"><button class="nav-btn"><span class="nav-btn">&lt;</span></button>
+        </a>
+    </nav>
+    <div class="menu-container">
+        <h1 class="heading">What brings you to Dribbble ?</h1>
+        <p class="sub-heading">Select the options that best describe you. Don't worry, you can explore other options later.</p>
+
+            <div class="menu">
+                <div class="card1 card-menu">
+                    <img class="images" src="images/shareWork.jpg" >
+                    <p class="card-txt">I'm a designer looking to share my work</p>
+                    <p class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the </p>
+                    <input class="select" type="checkbox">
+                </div>
+
+                <div class="card2 card-menu">
+                    <img src="images/searching.jpg" width="200">
+                    <p class="card-txt">I'm looking to hire a <br>designer</p>
+                    <p class="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the </p>
+                    <input  class="select" type="checkbox">
+                </div>
+
+                <div class="card3 card-menu">
+                    <img src="images/inspiration.jpg" width="200">
+                    <p class="card-txt">I'm looking for a designer inspiration</p>
+                    <p class="content">With over 7 million shots from a vast community of designers, Dribble is the leading sourse for design inspiration</p>
+                    <input  class="select" type="checkbox">
+                </div>
+
+            </div>
+            <p class="multiple-opt-txt">Anything else? You can select multiple</p>
+            <button class="finish-btn" onclick="verify()">Finish</button>
+            <button class="menu-return-btn">or Press RETURN</button>
+
+    </div>
+
+</body>
+<script>
+    function verify() {
+        window.location.href="/verifyEmail"
+    }
+</script>
+</html>
